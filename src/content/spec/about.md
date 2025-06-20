@@ -29,8 +29,8 @@ CTFのPwnやReversingの分野に興味がありますが、まだスキルを�
 
 #### CVE
 
-- [CVE-2023-29009](https://www.cve.org/CVERecord?id=CVE-2023-29009)
-- [CVE-2024-46994](https://www.cve.org/CVERecord?id=CVE-2024-46994)
+- <a href="https://www.cve.org/CVERecord?id=CVE-2023-29009" target="_blank" rel="noopener noreferrer">CVE-2023-29009</a>
+- <a href="https://www.cve.org/CVERecord?id=CVE-2024-46994" target="_blank" rel="noopener noreferrer">CVE-2024-46994</a>
 
 ## 日常関連
 
