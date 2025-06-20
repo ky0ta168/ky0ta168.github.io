@@ -12,15 +12,24 @@ function getDate() {
   return `${year}-${month}-${day}`
 }
 
-const args = process.argv.slice(2)
+function getHMS() {
+  const today = new Date()
+  const hours = today.getHours();
+  const minutes = today.getMinutes();
+  const seconds = today.getSeconds();
 
-if (args.length === 0) {
-  console.error(`Error: No filename argument provided
-Usage: npm run new-post -- <filename>`)
-  process.exit(1) // Terminate the script and return error code 1
+  return `${hours}${minutes}${seconds}`
 }
 
-let fileName = args[0]
+const args = process.argv.slice(2)
+
+let fileName = ""
+
+if (args.length === 0) {
+  fileName = getDate().replaceAll("-", "/") + "/" + getHMS()
+} else {
+  fileName = args[0]
+}
 
 // Add .md extension if not present
 const fileExtensionRegex = /\.(md|mdx)$/i
@@ -49,7 +58,7 @@ description: ''
 image: ''
 tags: []
 category: ''
-draft: false 
+draft: false
 lang: ''
 ---
 `
