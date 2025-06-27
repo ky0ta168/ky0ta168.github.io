@@ -6,9 +6,9 @@ import { readFile } from 'fs/promises';
 
 // サイト自体のOGP画像
 const generateOgpImage = async () => {
-  const fontData = await readFile(new URL('../assets/fonts/NotoSansJP-Medium.ttf', import.meta.url));
-  const bgData = await readFile(new URL('../assets/images/ogp.jpg', import.meta.url));
-  const iconData = await readFile(new URL('../assets/images/icon.png', import.meta.url));
+  const fontData = await readFile(new URL('../../public/fonts/NotoSansJP-Medium.ttf', import.meta.url));
+  const bgData = await readFile(new URL('../../public/images/ogp.jpg', import.meta.url));
+  const iconData = await readFile(new URL('../../public/images/icon.png', import.meta.url));
   const bgBase64 = `data:image/jpeg;base64,${bgData.toString('base64')}`;
   const iconBase64 = `data:image/png;base64,${iconData.toString('base64')}`;
 
@@ -37,6 +37,7 @@ const generateOgpImage = async () => {
           lineHeight: 1.4,
           color: '#111',
           display: 'flex',
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)',
         }}>
           <img
             src={iconBase64}
@@ -81,9 +82,9 @@ export const generateSiteOgpImage = () => {
 
 // ブログ記事ごとのOGP画像
 const generatePostOgpImage = async (title: string) => {
-  const fontData = await readFile(new URL('../assets/fonts/NotoSansJP-Medium.ttf', import.meta.url));
-  const bgData = await readFile(new URL('../assets/images/ogp.jpg', import.meta.url));
-  const iconData = await readFile(new URL('../assets/images/icon.png', import.meta.url));
+  const fontData = await readFile(new URL('../../public/fonts/NotoSansJP-Medium.ttf', import.meta.url));
+  const bgData = await readFile(new URL('../../public/images/ogp.jpg', import.meta.url));
+  const iconData = await readFile(new URL('../../public/images/icon.png', import.meta.url));
   const bgBase64 = `data:image/jpeg;base64,${bgData.toString('base64')}`;
   const iconBase64 = `data:image/png;base64,${iconData.toString('base64')}`;
 
@@ -114,6 +115,7 @@ const generatePostOgpImage = async (title: string) => {
           display: 'flex',
           textAlign: 'center',
           padding: '0 140px',
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)',
         }}>
           {title}
         </h1>
@@ -123,6 +125,7 @@ const generatePostOgpImage = async (title: string) => {
           color: '#111',
           display: 'flex',
           textAlign: 'center',
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)',
         }}>
           <img
             src={iconBase64}
