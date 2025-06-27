@@ -29,7 +29,7 @@ import partytown from '@astrojs/partytown';
 export default defineConfig({
 	site: "https://ky0ta168.github.io/",
 	base: "/",
-	trailingSlash: "always",
+	trailingSlash: "ignore",
 	integrations: [
 		partytown({
 			// Adds dataLayer.push as a forwarding-event.
@@ -175,5 +175,11 @@ export default defineConfig({
 				},
 			},
 		},
+		ssr: {
+			external: ['@resvg/resvg-js']
+		},
+		optimizeDeps: {
+			exclude: ["@resvg/resvg-js"]
+		}
 	},
 });
