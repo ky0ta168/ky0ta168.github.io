@@ -47,7 +47,7 @@ const generateOgpImage = async () => {
               marginRight: '24px',
             }}
           />
-          ky0ta168's blog
+          ky0ta168
         </h1>
       </div>
     </div>
@@ -135,7 +135,7 @@ const generatePostOgpImage = async (title: string) => {
               marginRight: '18px',
             }}
           />
-          ky0ta168' blog
+          ky0ta168
         </h2>
       </div>
     </div>
