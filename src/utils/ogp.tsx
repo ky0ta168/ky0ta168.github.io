@@ -23,9 +23,9 @@ const generateOgpImage = async () => {
       fontFamily: 'Noto Sans JP',
     }}>
       <div style={{
-        width: '2280px',
-        height: '1140px',
-        borderRadius: '24px',
+        width: '2180px',
+        height: '1040px',
+        borderRadius: '28px',
         backgroundColor: 'rgba(255,255,255,0.95)',
         display: 'flex',
         flexDirection: 'column',
@@ -99,9 +99,9 @@ const generatePostOgpImage = async (title: string) => {
       fontFamily: 'Noto Sans JP',
     }}>
       <div style={{
-        width: '2280px',
-        height: '1140px',
-        borderRadius: '24px',
+        width: '2180px',
+        height: '1040px',
+        borderRadius: '28px',
         backgroundColor: 'rgba(255,255,255,0.95)',
         display: 'flex',
         flexDirection: 'column',
@@ -114,7 +114,7 @@ const generatePostOgpImage = async (title: string) => {
           color: '#111',
           display: 'flex',
           textAlign: 'center',
-          padding: '0 140px',
+          padding: '0 100px',
           textShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)',
         }}>
           {title}
