@@ -27,8 +27,8 @@ import partytown from '@astrojs/partytown';
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://ky0ta168.vercel.app/",
-	base: "/",
+  site: "https://ky0ta168.github.io/",
+  base: "/",
   trailingSlash: "ignore",
   integrations: [
     partytown({
