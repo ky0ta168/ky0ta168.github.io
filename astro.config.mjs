@@ -24,6 +24,8 @@ import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 import { pluginCustomCopyButton } from "./src/plugins/expressive-code/custom-copy-button.js";
 import partytown from '@astrojs/partytown';
+import fs from "node:fs";
+import path from "node:path";
 
 // https://astro.build/config
 export default defineConfig({
@@ -108,6 +110,19 @@ export default defineConfig({
     }),
     svelte(),
     sitemap(),
+    {
+      name: "duplicate-sitemap",
+      hooks: {
+        "astro:build:done": async ({ dir }) => {
+          const src = path.join(dir.pathname, "sitemap-index.xml");
+          const dest = path.join(dir.pathname, "sitemap.xml");
+          if (fs.existsSync(src)) {
+            fs.copyFileSync(src, dest);
+            console.log("✅ sitemap.xml generated (copy of sitemap-index.xml)");
+          }
+        },
+      },
+    },
   ],
   markdown: {
     remarkPlugins: [
